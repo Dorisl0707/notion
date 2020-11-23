@@ -5,7 +5,7 @@
 }
 
 body {
-	background-image: linear-gradient(to bottom, #fff 0%, #fff 50%, #dfb9c6 50%, #dfb9c6 100%);
+	background-image: linear-gradient(to bottom, #fff 0%, #fff 50%, #e0b8ce 50%, #e0b8ce 100%);
 	font-family: 'Muli', sans-serif;
 	display: flex;
 	flex-direction: column;
