@@ -1,0 +1,89 @@
+body {
+  height: 100vh;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #e0b8ce;
+  color: #e0b8ce;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+
+.clock {
+  font-size: 12vw;
+  line-height: 1;
+}
+
+.hours:after, .minutes:after {
+  content: ':';
+  color: #fff;
+}
+
+.digit {
+  width: 0.6em;
+  height: 1em;
+  display: inline-block;
+  position: relative;
+  margin: 5px;
+  text-align: center;
+}
+
+.showing, .below, .above {
+  width: 0.6em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 15px;
+}
+
+.showing {
+  -webkit-transform: perspective(100vh) rotateX(0) translateY(0%);
+          transform: perspective(100vh) rotateX(0) translateY(0%);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.below {
+  -webkit-transform: perspective(100vh) rotateX(-90deg) translateY(140%);
+          transform: perspective(100vh) rotateX(-90deg) translateY(140%);
+  transform-delay: 0ms;
+  -webkit-transition: -webkit-transform 0;
+  transition: -webkit-transform 0;
+  transition: transform 0;
+  transition: transform 0, -webkit-transform 0;
+}
+
+.above {
+  -webkit-transform: perspective(100vh) rotateX(90deg) translateY(-140%);
+          transform: perspective(100vh) rotateX(90deg) translateY(-140%);
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  transform-delay: 0ms;
+  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: -webkit-transform 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: transform 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: transform 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045), -webkit-transform 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.sig {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.4);
+}
